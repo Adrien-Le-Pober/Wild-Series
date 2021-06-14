@@ -16,3 +16,13 @@
   height: 400px;
 }
 
+.season-item {
+  display: flex;
+  width: 150px;
+  height: 30px;
+  background-color: $secondary;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+}
+

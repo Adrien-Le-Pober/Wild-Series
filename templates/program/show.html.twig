@@ -15,9 +15,11 @@
                         <li>Aucun acteur pour cette série</li>
                     {% endfor %}
                 </ul>
-                {% for season in seasons %}
-                    <a href="{{ path("program_season_show", { programId: program.id, seasonId: season.id }) }}">Saison {{ season.number}}</a>
-                {% endfor %}
+                <div class="d-flex flex-wrap justify-content-between">
+                    {% for season in seasons %}
+                        <a class="season-item px-2 mb-2" href="{{ path("program_season_show", { programId: program.id, seasonId: season.id }) }}">Saison {{ season.number}}</a>
+                    {% endfor %}
+                </div>
                 <a href="{{ path('program_index') }}">
                     Retour à la liste des programmes
                 </a>
