@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import "~bootstrap/scss/bootstrap";
+
+.navbar {
+  padding: 8px 50px;
+}
+
+.navbar-brand {
+  font-family: 'Permanent Marker', cursive;
+  filter: drop-shadow(16px 16px 20px $secondary);
+  transform: rotate(-30deg);
+  font-size: 60px;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  .nav-item {
+    padding: 0 16px;
+  }
+  .navbar-item1 {
+    align-self: center;
+    margin-right: 0;
+  }
+  .navbar-item2 {
+    align-self: flex-end;
+  }
+}
+
+.nav-link {
+  color: $dark;
+  font-size: 20px;
+  &:hover {
+    color: $light;
+  }
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: $dark;
+}
+
+.dropdown-menu {
+  display: block;
+  max-height: 0vh;
+  border: none;
+  border-left: solid 3px $light;
+  margin: 0;
+  padding: 0;
+  background: $secondary;
+  overflow: hidden;
+  .show {
+    padding: 8px 0;
+  }
+}
+
+.show{
+  max-height: 100vh;
+  transition: max-height 0.3s;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  color: $dark;
+  padding: 0 0 0 8px;
+  height: 40px;
+  &:hover{
+    background-color: lighten($secondary, 5%);
+    color: $light;
+  }
+}

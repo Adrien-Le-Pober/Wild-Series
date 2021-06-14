@@ -1,0 +1,14 @@
+{% include 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <header class="d-flex justify-content-center my-3">
+            <h1>{{ program.title }}</h1>
+        </header>
+        <a href="{{ path("program_season_show", {programId: program.id, seasonId: season.id}) }}">Saison {{ season.number }}</a>
+        <main class="d-flex align-self-center flex-column my-3">
+            <h3>{{ episode.number }}. {{ episode.title }}</h3>
+            <p>{{ episode.synopsis }}</p>
+        </main>
+
+    </div>
+{% endblock %}

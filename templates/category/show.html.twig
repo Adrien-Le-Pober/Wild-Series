@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container d-flex flex-column">
+        <h1 class="align-self-center">{{ category.name }}</h1>
+        {% if series is not null %}
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Résumé</th>
+                <th scope="col">Lien</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for serie in series %}
+            <tr>
+                <th scope="row">{{ serie.id }}</th>
+                <td>{{ serie.title }}</td>
+                <td>{{ serie.summary }}</td>
+                <td><a class="btn btn-primary" href="{{ path('program_show', {slug: serie.slug }) }}">Voir</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>Aucune série trouvée</p>
+        {% endif %}
+    </div>
+{% endblock %}

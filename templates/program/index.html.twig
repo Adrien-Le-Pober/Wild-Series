@@ -1,0 +1,23 @@
+{% include 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <a href="{{ path('app_index') }}">
+            Retour à l'accueil
+        </a>
+        <div class="carousel">
+            {% for program in programs %}
+                <div class="card program-card">
+                    <img src="{{ program.poster }}" class="card-img-top" alt="poster">
+                    <div class="card-body">
+                        <a href="{{ path("program_show", {slug: program.slug}) }}">{{ program.title }}</a>
+                        <p class="text text-muted">{{ program.category.name }}</p>
+                        <p class="card-text">{{ program.summary }}</p>
+                        <a href="{{ path("program_show", { slug: program.slug }) }}">Voir la fiche</a>
+                    </div>
+                </div>
+            {% else %}
+                Aucune série trouvée.
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

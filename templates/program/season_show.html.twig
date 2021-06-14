@@ -1,0 +1,20 @@
+{% include 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <header class="d-flex justify-content-center my-3">
+            <a href="{{ path("program_show", {slug: program.slug}) }}">All seasons</a>
+            <h1>{{ program.title }}</h1>
+        </header>
+        <main class="d-flex justify-content-center flex-wrap my-3">
+            {% for episode in season.episodes %}
+                <div class="card col-4">
+                    <img src="https://fakeimg.pl/290x180/" class="card-img-top" alt="episode">
+                    <div class="card-body">
+                        <a href="{{ path("program_episode_show", { programId: program.id, seasonId: season.id, episodeId: episode.id }) }}" class="card-title">{{ episode.title }}</a>
+                        <p class="card-text">{{ episode.synopsis }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </main>
+    </div>
+{% endblock %}

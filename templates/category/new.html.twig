@@ -1,0 +1,10 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="container d-flex justify-content-center align-content-center">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input class="btn btn-secondary mt-3" type='submit' value='Ajouter cette catégorie'>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

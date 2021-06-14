@@ -1,0 +1,14 @@
+.home-sections {
+  display: flex;
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    color: $light;
+    img {
+      width: 350px;
+    }
+  }
+}
+

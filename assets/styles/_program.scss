@@ -1,0 +1,18 @@
+@import "~slick-carousel/slick/slick";
+@import "~slick-carousel/slick/slick-theme";
+
+.slick-prev, .slick-next {
+  z-index: 10;
+}
+
+.card {
+  width: 18rem;
+  background-color: $secondary;
+  font-family: Optima, sans-serif;
+  margin: 5px;
+}
+
+.carousel img {
+  height: 400px;
+}
+

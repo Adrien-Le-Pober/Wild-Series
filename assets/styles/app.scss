@@ -1,0 +1,26 @@
+@import "~bootstrap/scss/bootstrap";
+
+$primary: #1B2631;
+$secondary: #154360;
+$light: #fdfefe;
+$dark: #F8F9F9;
+
+@import "_navbar.scss";
+@import "_home.scss";
+@import "_program.scss";
+@import "_category.scss";
+
+body {
+  background-color: $primary;
+  color: $dark;
+  font-family: Roboto, sans-serif;
+  a {
+    color: $light;
+    &:hover {
+      transform: scale(1.1);
+      text-decoration: none;
+      color: $light;
+      transition: transform 0.3s;
+    }
+  }
+}
