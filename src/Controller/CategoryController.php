@@ -34,14 +34,13 @@ class CategoryController extends AbstractController
      *
      * @Route("/new", name="new")
      */
-    public function new(Request $request, Slugify $slugify) : Response
+    public function new(Request $request) : Response
     {
         $category = new Category();
-        $slug = $slugify->generate($category->getName());
-        $category->setSlug($slug);
         $form = $this->createForm(CategoryType::class, $category);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $category->setSlug($category->getName());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($category);
             $entityManager->flush();

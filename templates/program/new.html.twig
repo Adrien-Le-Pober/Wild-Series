@@ -4,8 +4,21 @@
     <div class="container d-flex justify-content-center align-content-center">
         {{ form_start(form) }}
         {{ form_errors(form) }}
-        {{ form_widget(form) }}
-        <input class="btn btn-secondary mt-3" type='submit' value='Ajouter cette série'>
+        <div class="d-flex flex-column align-items-center form-control bg-primary text-light">
+            {{ form_label(form.title, 'Titre') }}
+            {{ form_widget(form.title, { 'attr': { 'class': 'form-control' } }) }}
+            {{ form_label(form.summary, 'Résumé') }}
+            {{ form_widget(form.summary, { 'attr': { 'class': 'form-control' } }) }}
+            {{ form_label(form.poster, 'Lien de l\'affiche') }}
+            {{ form_widget(form.poster, { 'attr': { 'class': 'form-control' } }) }}
+            {{ form_label(form.category, 'Catégorie') }}
+            {{ form_widget(form.category, { 'attr': { 'class': 'form-select w-75' } }) }}
+            {{ form_label(form.actors, 'Acteurs') }}
+            {% for actor in form.actors %}
+                {{ form_widget(actor, { 'attr': { 'class': 'btn btn-secondary', 'placeholder': '{{ actor.name }}' } }) }}
+            {% endfor %}
+            <input class="btn btn-secondary mt-3" type='submit' value='Ajouter cette série'>
+        </div>
         {{ form_end(form) }}
     </div>
 {% endblock %}

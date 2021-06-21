@@ -98,14 +98,14 @@ class ProgramController extends AbstractController
      * @Route("/{programId}/seasons/{seasonId}/episodes/{episodeId}", name="episode_show", methods={"GET"}, requirements={"programId"="\d+", "seasonId"="\d+", "episodeId"="\d+"})
      *
      */
-    public function showEpisode(Program $programId, Season $seasonId, Episode $episodeId, Request $request)
+    public function showEpisode(Program $programId, Season $seasonId, Episode $episodeId, Request $request): Response
     {
         $form = $this->createForm(CommentType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
 
-            $entityManager->persist($program);
+            $entityManager->persist($programId);
             $entityManager->flush();
         }
         return $this->render('program/episode_show.html.twig', [
